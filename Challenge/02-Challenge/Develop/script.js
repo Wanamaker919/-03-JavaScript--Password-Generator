@@ -2,7 +2,7 @@
 let generateBtn = document.querySelector("#generate");
 
 let numbers = ['0123456789'];
-let spec = ['!@#$%^&*()_+<>?'];
+let special = ['!@#$%^&*()_+<>?'];
 let lowerCase = ['abcdefghijklmnopqurstuvwxyz',];
 let upperCase = ['ABCDEFGHIJKLMNOPQURSTUVWXYZ',];
 function generatePassword() {
@@ -14,21 +14,21 @@ function generatePassword() {
       return ''      
     }
 
-   let hasUp = confirm("Would you like UPPERCASE letters in your password?");
-   let hasLow = confirm("Would you like lowercase letters in your password?");
-   let hasNum = confirm("Would you like numbers in your password?");
-   let hasSpec = confirm("Would you like special characters in your password?");
+   let Upper = confirm("Would you like UPPERCASE letters in your password?");
+   let Lower = confirm("Would you like lowercase letters in your password?");
+   let Numbers = confirm("Would you like numbers in your password?");
+   let Special = confirm("Would you like special characters in your password?");
 
   let selection = [];
   let result = '';
 
-  if (hasNum === true) {
+  if (Numbers === true) {
     selection = selection.concat(numbers)
-  } if (hasSpec === true) {
-    selection = selection.concat(spec)
-  } if (hasLow === true) {
+  } if (Special === true) {
+    selection = selection.concat(special)
+  } if (Lower === true) {
     selection = selection.concat(lowerCase)
-  } if (hasUp === true) {
+  } if (Upper === true) {
     selection = selection.concat(upperCase)
   }
    
@@ -37,7 +37,7 @@ function generatePassword() {
     randomChar = selection[randomIn] 
     result = result + randomChar
       }
- console.log(hasLow, hasNum, hasSpec, hasUp, length);
+ console.log(Lower, Numbers, Special, Upper, length);
   return result;  
 }
 function writePassword() {
